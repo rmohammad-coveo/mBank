@@ -48,8 +48,8 @@ export default function App() {
             <QuickViewModalProvider>
               <CustomContextProvider>
                 <Router>
-                  <NavBar />
                   <Header />
+                  <NavBar />
                   <QuickViewModal />
                   <Routes>
                     <Route

@@ -3,6 +3,7 @@
 The project is hosted live [here](https://demo-mbank.netlify.app).
 
 The initial UI was created using [Coveo CLI - ui:create:react](https://docs.coveo.com/en/cli/#coveo-uicreatereact-name).
+
 This project is built upon the [FiServ](https://github.com/mhsumbal-coveo/FiServ-Pre-req) project.
 
 ## Prerequisite

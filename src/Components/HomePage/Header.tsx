@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Theme } from "../../theme";
 import styled from "styled-components";
 import HeaderLogo from "../../assets/HeaderLogo.svg";
+import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { Icon } from "react-icons-kit";
 import { search } from "react-icons-kit/feather/search";
@@ -59,7 +60,7 @@ const Header: React.FC = () => {
   return (
     <>
       <Wrapper>
-        <Logo src={HeaderLogo} onClick={() => navigate("/home")} />
+        <Logo src={logo} onClick={() => navigate("/home")} />
         <RightWrapper>
           <LinkWrapper>
             {HeaderConfig.map((item) => {
@@ -69,16 +70,16 @@ const Header: React.FC = () => {
                 </NavigationLink>
               );
             })}
-            <Divider/>
+            </LinkWrapper>
             <IconsWrapper>
               <IconContainer
                 style={{ color: Theme.headerIconColor, cursor: "pointer" }}
                 onClick={() => toggleSearchBox()}
               >
                 {openSearch && !onSearchPage ? (
-                  <Icon icon={x} size={26} />
+                  <Icon icon={x} size={32} />
                 ) : (
-                  <Icon icon={search} size={26} />
+                  <Icon icon={search} size={32} />
                 )}
               </IconContainer>
               <ProfileIconContainer
@@ -102,7 +103,6 @@ const Header: React.FC = () => {
                   <ContextForm/>
                 </Popover>
             </IconsWrapper>
-          </LinkWrapper>
         </RightWrapper>
       </Wrapper>
       <Fade in={openSearch && !onSearchPage}>
@@ -119,12 +119,13 @@ const Header: React.FC = () => {
 };
 
 const Wrapper = styled.header`
+  margin: 0 auto;
+  max-width: 1500px;
   height: 80px;
   background-color: ${Theme.secondaryText};
   display: flex;
   padding: 0px 40px;
   align-items: center;
-  box-shadow: 0px 6px 16px rgba(229, 232, 232, 0.75);
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
@@ -140,15 +141,14 @@ const Logo = styled.img`
 
 const RightWrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex: 1;
 `;
 
 const LinkWrapper = styled.ul`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 800px;
+  width: 100%;
   @media (max-width: 1000px) {
     width: auto;
   }
@@ -157,24 +157,26 @@ const LinkWrapper = styled.ul`
 const NavigationLink = styled(Link)`
   color: ${Theme.primaryText};
   text-decoration: none;
-  font-size: 16px;
+  margin: 0 24px;
+  font-size: 20px;
+  font-weight: 300;
   opacity: 1;
-  transition: 0.2s ease-in-out all;
-  &:hover {
-    opacity: 0.7;
+  position: relative;
+  &::after {
+    position absolute;
+    width: 0;
+    content: "";
+    height: 3px;
+    margin: 0 auto;
+    left: 0;
+    bottom: -16px;
+    background: #993300;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover::after {
+    width: 80%;
   }
   @media (max-width: 1000px) {
-    display: none;
-  }
-`;
-
-const Divider = styled.div`
-  height: 50px;
-  border-right-width: 2px;
-  width: 1px;
-  height: 48px;
-  background: #e5e8e8;
-  @media (max-width:1000px) {
     display: none;
   }
 `;
@@ -194,6 +196,7 @@ const SearchContainer = styled.div`
 const IconsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-right: 100px;
 `;
 
 const IconContainer = styled.button`
@@ -210,7 +213,7 @@ transition: 0.2s ease-in-out all;
 `
 
 const ProfileName = styled.span`
-font-size  : 16px;
+font-size  : 20px;
 font-weight: 400;
 font-family: inherit;
 margin-left: 15px;
@@ -247,8 +250,8 @@ const SearchBoxContainer = styled.div`
 
 
 const ProfileAvatar = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   border-radius: 24px;
   object-fit: cover;
 `

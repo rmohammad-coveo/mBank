@@ -24,19 +24,22 @@ const NavBar: React.FC = ()=>{
 };
 
 const Wrapper = styled.nav`
-height: 40px;
+height: 80px;
+align-items: center;
 width: 100%;
-background-color: ${Theme.navbar};
+display: flex;
+margin: 0 auto;
+max-width: 1500px;
+background-color: white;
 `
 
 const NavigationWrapper = styled.ul`
-margin-left: 20px;
 display: flex;
-color : white;
-width: 20%;
+color: #121212;
+width: 100%;
 min-width: 400px;
 height: 40px;
-justify-content: space-around;
+/* justify-content: space-between; */
 align-items: center;
 @media (max-width: 480px) {
     margin-left: 0px;
@@ -47,13 +50,28 @@ align-items: center;
 `
 
 const NavigationLink = styled.a`
-color: white;
-font-size: 14px;
+max-width: 300px;
+text-overflow: "";
+color: #121212;
+margin-right: 40px;
+font-size: 22px;
 text-decoration: none;
 opacity: 0.8;
 transition: 0.2s ease-in-out all;
-&:hover{
-    opacity: 1;
+position: relative;
+&::after {
+    position absolute;
+    width: 0;
+    content: "";
+    height: 3px;
+    margin: 0 auto;
+    left: 0;
+    bottom: -12px;
+    background: #993300;
+    transition: all 0.3s ease-in-out;
+  }
+&:hover::after{
+    width: 80%;
 }
 &.active{
     opacity: 1;

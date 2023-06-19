@@ -3,45 +3,65 @@ import { RecommendationType } from './Types/ConfigTypes';
 
 export const NavBarConfig = [
   {
-    title: "Personal",
+    title: "konta",
+    redirectTo: "/homehome",
+  },
+  {
+    title: "kredyty",
     redirectTo: "/home",
   },
   {
-    title: "Business",
-    redirectTo: "/",
+    title: "karty",
+    redirectTo: "/home",
   },
   {
-    title: "Commerical",
-    redirectTo: "/",
+    title: "Inwestycje i oszczędności",
+    redirectTo: "/home",
   },
   {
-    title: "About",
-    redirectTo: "/",
+    title: "ubezpieczenia",
+    redirectTo: "/home",
+  },
+  {
+    title: "Usługi i e-Urząd",
+    redirectTo: "/home",
+  },
+  {
+    title: "aplikacja i serwis",
+    redirectTo: "/home",
+  },
+  {
+    title: "dla klienta",
+    redirectTo: "/home",
+  },
+  {
+    title: "bezpieczeństwo",
+    redirectTo: "/home",
   },
 ];
 
 
 export const HeaderConfig = [
-    {
-        title: "Bank Account",
-        redirectTo: "/home",
-      },
-      {
-        title: "Credit Card",
-        redirectTo: "/",
-      },
-      {
-        title: "Mortgages",
-        redirectTo: "/",
-      },
-      {
-        title: "Investment",
-        redirectTo: "/",
-      },
-      {
-        title: "Insurance",
-        redirectTo: "/",
-      },
+  {
+    title: "Klienci indywidualni",
+    redirectTo: "/home",
+    color: "#993300"
+  },
+  {
+    title: "Private banking",
+    redirectTo: "/home",
+    color: "#993300"
+  },
+  {
+    title: "Firmy",
+    redirectTo: "/home",
+    color: "#008520"
+  },
+  {
+    title: "MSP i korporacje",
+    redirectTo: "/home",
+    color: "#3554f0"
+  },
 ]
 
 
