@@ -15,7 +15,7 @@ export const NavBarConfig = [
     redirectTo: "/home",
   },
   {
-    title: "Inwestycje i oszczędności",
+    title: "inwestycje i oszczędności",
     redirectTo: "/home",
   },
   {
@@ -23,7 +23,7 @@ export const NavBarConfig = [
     redirectTo: "/home",
   },
   {
-    title: "Usługi i e-Urząd",
+    title: "usługi i e-urząd",
     redirectTo: "/home",
   },
   {

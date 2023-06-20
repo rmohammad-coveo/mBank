@@ -226,8 +226,6 @@ const MainWrapper = styled.div`
 
 const PopperStyledComponent = styled.div`
   background: white;
-
-  border-radius: 6px;
   box-shadow: 0px 7px 13px -2px rgba(0, 0, 0, 0.45);
   /* padding: 10px; */
   position: relative;

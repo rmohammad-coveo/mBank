@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
 
 const MainWrapper = styled.div`
   width: 100%;
-  background-color: #f5f5f5;
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;

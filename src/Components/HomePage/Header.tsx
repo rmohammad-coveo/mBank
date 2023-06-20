@@ -59,6 +59,14 @@ const Header: React.FC = () => {
 
   return (
     <>
+      <LinesContainer>
+        <Lines style={{width:"25%", backgroundColor:"red"}}/>
+        <Lines style={{width:"5%", backgroundColor:"black"}}/>
+        <Lines style={{width:"30%", backgroundColor:"orange"}}/>
+        <Lines style={{width:"10%", backgroundColor:"brown"}}/>
+        <Lines style={{width:"5%", backgroundColor:"blue"}}/>
+        <Lines style={{width:"25%", backgroundColor:"green"}}/>
+      </LinesContainer>
       <Wrapper>
         <Logo src={logo} onClick={() => navigate("/home")} />
         <RightWrapper>
@@ -77,7 +85,7 @@ const Header: React.FC = () => {
                 onClick={() => toggleSearchBox()}
               >
                 {openSearch && !onSearchPage ? (
-                  <Icon icon={x} size={32} />
+                  <Icon icon={x} size={32} style={{color:"red"}}/>
                 ) : (
                   <Icon icon={search} size={32} />
                 )}
@@ -118,6 +126,17 @@ const Header: React.FC = () => {
   );
 };
 
+const LinesContainer = styled.div`
+  display: flex;
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 1600px;
+`;
+
+const Lines = styled.div`
+  height: 5px;
+`;
+
 const Wrapper = styled.header`
   margin: 0 auto;
   max-width: 1500px;
@@ -137,6 +156,7 @@ const Logo = styled.img`
   height: 50px;
   width: 150px;
   object-fit: contain;
+  cursor: pointer;
 `;
 
 const RightWrapper = styled.div`
@@ -158,7 +178,7 @@ const NavigationLink = styled(Link)`
   color: ${Theme.primaryText};
   text-decoration: none;
   margin: 0 24px;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 300;
   opacity: 1;
   position: relative;
@@ -169,8 +189,8 @@ const NavigationLink = styled(Link)`
     height: 3px;
     margin: 0 auto;
     left: 0;
-    bottom: -16px;
-    background: #993300;
+    top:-5px;
+    background-color: #993300;
     transition: all 0.3s ease-in-out;
   }
   &:hover::after {
@@ -179,21 +199,31 @@ const NavigationLink = styled(Link)`
   @media (max-width: 1000px) {
     display: none;
   }
-`;
-
-const SearchContainer = styled.div`
-  width: 100%;
-  height: 150px;
-  box-shadow: 0px 6px 16px rgba(229, 232, 232, 0.75);
+  `;
+  
+  const SearchContainer = styled.div`
+  padding: 4px 8px;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: absolute;
-  background-color: white;
+  top: 5px;
+  left: calc(22vw);
+  background-color: #0000000;
   justify-content: center;
-`;
+  `;
+  
+  const SearchBoxContainer = styled.div`
+    width: 56vw;
+    background: white;
+    border-bottom: 3px solid #2b60f0;
+    box-shadow: 0 0 5px black;
+    @media (max-width: 480px) {
+      min-width: 80vw;
+    }
+  `;
 
-const IconsWrapper = styled.div`
+  const IconsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-right: 100px;
@@ -203,13 +233,7 @@ const IconContainer = styled.button`
 background: none;
 border: 0px;
 width: 40px;
-transition: 0.2s ease-in-out all;
-&:hover{
-  transform: scale(0.95);
-}
-&:active{
-  transform: scale(0.85);
-}
+transition: 0.2s ease-in-out all;S
 `
 
 const ProfileName = styled.span`
@@ -217,7 +241,7 @@ font-size  : 20px;
 font-weight: 400;
 font-family: inherit;
 margin-left: 15px;
-color : ${Theme.headerIconColor};
+color : #008520;
 text-overflow: ellipsis;
 `
 
@@ -230,29 +254,15 @@ const ProfileIconContainer = styled.button`
   display: flex;
   align-items: center;
   transition: 0.2s ease-in-out all;
-  &:hover{
-  transform: scale(0.95);
-}
-&:active{
-  transform: scale(0.85);
-}
 
 `
 
-const SearchBoxContainer = styled.div`
-  width: 50%;
-  max-width: 800px;
-  min-width: 500px;
-  @media (max-width: 480px) {
-    min-width: 80vw;
-  }
-`;
 
 
 const ProfileAvatar = styled.img`
-  width: 45px;
-  height: 45px;
-  border-radius: 24px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   object-fit: cover;
 `
 

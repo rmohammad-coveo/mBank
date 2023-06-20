@@ -54,7 +54,7 @@ max-width: 300px;
 text-overflow: "";
 color: #121212;
 margin-right: 40px;
-font-size: 22px;
+font-size: 18px;
 text-decoration: none;
 opacity: 0.8;
 transition: 0.2s ease-in-out all;

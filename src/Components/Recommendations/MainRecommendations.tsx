@@ -55,7 +55,6 @@ export const RecommendationListRenderer: FunctionComponent<
   return (
     <MainWrapper>
       <Title>{MainRecommendationConfig.title}</Title>
-      <SubTitle>{MainRecommendationConfig.description}</SubTitle>
       {state.recommendations.length > 0 ? (
         <CardWrapper>
           {state?.recommendations
@@ -125,16 +124,14 @@ const MainRecommendationList = () => {
 export default MainRecommendationList;
 
 const MainWrapper = styled.div`
-  width: 95%;
-  background-color: white;
-  border-radius: 24px;
-  position: relative;
-  top: -40px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+  background-color: #f0f0f0;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 10px 25px rgba(229, 232, 232, 0.6);
   margin-bottom: 30px;
 `;
 
@@ -142,18 +139,28 @@ const Title = styled.h2`
   font-size: 32px;
   font-weight: 400;
   font-family: inherit;
-  color: ${Theme.primaryText};
+  color: black;
   margin-top: 30px;
   margin-bottom: 10px;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: "";
+    height: 5px;
+    bottom: -10px;
+    left: 0;
+    width: 80%;
+    background: #d63024;
+  }
 `;
-
+/* 
 const SubTitle = styled.p`
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
   color: ${Theme.primaryText};
   margin-bottom: 20px;
-`;
+`; */
 
 const CardWrapper = styled.div`
   display: flex;
@@ -161,6 +168,5 @@ const CardWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  max-width: 1500px;
   margin-top: 20px;
 `;

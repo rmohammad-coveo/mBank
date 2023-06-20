@@ -40,6 +40,7 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
 
   return (
     <Container >
+    <SearchButton type='submit' variant="contained" style={{height : '43px'}} onClick={onPressSearchButton}><Icon icon={search} size={24} /></SearchButton>
     <Autocomplete
       inputValue={state.value}
       onInputChange={(_, newInputValue) => {
@@ -57,7 +58,8 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
       freeSolo
       style={{width: '100%'}}
       renderInput={(params) => (
-        <TextField {...params} className='home-search-box' placeholder="Search" size="small" />
+        <TextField {...params} className='home-search-box' placeholder="Czego szukasz?" size="medium"
+        sx={{"& fieldset": {border:"none"}}}/>
       )}
       renderOption={(props, option, { inputValue }) => {
         const matches = match(option, inputValue);
@@ -80,7 +82,6 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
         );
       }}
     />
-    <SearchButton type='submit' variant="contained" style={{height : '43px', marginLeft: '10px'}} onClick={onPressSearchButton}><Icon icon={search} size={24} /></SearchButton>
     </Container>
   );
 };
@@ -103,9 +104,15 @@ export default SearchBox;
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `
 
 const SearchButton = styled(Button)`
-height: 43px;
-margin-left: 10px;
+color: red;
+background-color: #00000000;
+box-shadow: none;
+&:hover{
+  background-color: white;
+  box-shadow: none;
+}
 `
