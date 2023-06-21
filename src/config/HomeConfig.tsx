@@ -43,22 +43,22 @@ export const NavBarConfig = [
 
 export const HeaderConfig = [
   {
-    title: "Klienci indywidualni",
+    title: "klienci indywidualni",
     redirectTo: "/home",
     color: "#993300"
   },
   {
-    title: "Private banking",
+    title: "private banking",
     redirectTo: "/home",
     color: "#993300"
   },
   {
-    title: "Firmy",
+    title: "firmy",
     redirectTo: "/home",
     color: "#008520"
   },
   {
-    title: "MSP i korporacje",
+    title: "msp i korporacje",
     redirectTo: "/home",
     color: "#3554f0"
   },
@@ -77,18 +77,18 @@ export const HeroConfig = {
 
 export const MainRecommendationConfig : RecommendationType= {
 
-  title : 'Recommendations',
+  title : 'polecane',
   description : "Here are your personalized recommendations",
   numberOfResults: 6,
   imageField : 'sfimage_url__c',
-  pipeline : 'Homepage',
+  pipeline : 'Rec Content',
   searchHub: 'default',
   id : 'Recommendation'
 }
 
 export const VideoRecommendationConfig : RecommendationType  = {
 
-  title : 'Videos',
+  title : 'wideo',
   description : "Here are your personalized recommendations",
   numberOfResults: 3,
   imageField : 'ytthumbnailurl',

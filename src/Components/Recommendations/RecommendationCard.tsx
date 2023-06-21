@@ -51,7 +51,7 @@ const RecommendtionCard: React.FC<RecommendationCardType> = ({
         <ReferralLink>
           {!video ? "Learn more" : "Watch now"}{" "}
           <div style={{ marginLeft: "5px", color: Theme.link }}>
-            <Icon icon={chevronRight} />
+            <Icon icon={chevronRight} style={{color: "#ae0000"}}/>
           </div>
         </ReferralLink>
       </TextWrapper>
@@ -74,7 +74,7 @@ export const SkeletonRecommendtionCard: React.FC = () => {
 };
 
 const ImageContainer = styled.div`
-  overflow: hidden;
+  width: 100%
 `;
 
 const Image = styled.img`
@@ -85,12 +85,11 @@ const Image = styled.img`
 `;
 const TextWrapper = styled.div`
   display: flex;
-  width: 100%;
   height: 230px;
   align-items: center;
   justify-content: space-around;
-  padding: 10px 20px;
   flex-direction: column;
+  padding: 8px 16px;
 `;
 
 const Title = styled.a`
@@ -126,7 +125,7 @@ const ReferralLink = styled.a`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  color: ${Theme.link};
+  color: #ae0000;
   text-decoration: none;
   display: flex;
   align-self: flex-start;
@@ -136,19 +135,22 @@ const ReferralLink = styled.a`
 
 const MainWrapper = styled.div`
   height: 500px;
-  width: 400px;
-  border-radius: 16px;
+  z-index: 10;
+  position: relative;
+  width: 300px;
   border: 1px solid #e5e8e8;
   overflow: hidden;
   margin: 20px;
   background: white;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
   &:hover {
-    border-color: ${Theme.link};
+    border-color: #ae0000;
   }
 
   &:hover ${Title} {
-    color: #1372ec;
+    color: #ae0000;
   }
 
   &:hover ${Image} {
@@ -158,6 +160,7 @@ const MainWrapper = styled.div`
   &:hover ${ReferralLink} {
     opacity: 1;
   }
+
   @media (max-width: 480px) {
     width: 90vw;
   }

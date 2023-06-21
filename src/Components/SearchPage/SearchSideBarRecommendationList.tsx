@@ -154,6 +154,7 @@ const SearchSideBarRecommendationList: FunctionComponent<
       accessToken: process.env.REACT_APP_API_KEY!,
       searchHub: searchHub,
       pipeline: pipeline,
+      platformUrl: process.env.REACT_APP_PLATFORM_URL,
     },
   });
 

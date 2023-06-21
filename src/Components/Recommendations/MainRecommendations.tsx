@@ -102,6 +102,7 @@ const MainRecommendationList = () => {
       accessToken: process.env.REACT_APP_API_KEY!,
       searchHub: MainRecommendationConfig.searchHub,
       pipeline: MainRecommendationConfig.pipeline,
+      platformUrl: process.env.REACT_APP_PLATFORM_URL,
     },
   });
 

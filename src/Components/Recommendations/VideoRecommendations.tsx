@@ -98,7 +98,7 @@ const VideoRecommendation = () => {
       accessToken: process.env.REACT_APP_API_KEY!,
       searchHub : VideoRecommendationConfig.searchHub,
       pipeline : VideoRecommendationConfig.pipeline,
-
+      platformUrl: process.env.REACT_APP_PLATFORM_URL,
     },
   });
 
