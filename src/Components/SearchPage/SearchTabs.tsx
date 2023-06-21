@@ -84,7 +84,6 @@ const SearchTabs : React.FC<SearchTabsType> = ({ filterSelected }) => {
 
 const Wrapper = styled.div`
   width: 100%;
-  background: ${Theme.navbar};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,16 +92,36 @@ const Wrapper = styled.div`
 `;
 
 const TabTitle = styled.a<{isActive : boolean }>`
-  padding: 15px 20px;
+  margin: 0 8px;
+  padding: 15px 0;
+  font-size: ${(props) => (props.isActive ? 16 : 15)}px;
   text-align: center;
-  color: ${Theme.secondaryText};
+  color: black;
+  font-weight: ${(props) => (props.isActive ? 'bold' : 300)};
+  text-transform: uppercase;
   cursor: pointer;
   font-family: inherit;
-  background: ${(props) => (props.isActive ? Theme.selection : null)};
   opacity: ${(props) => (props.isActive ? 1 : 0.8)};
   transition: 0.2s ease-in-out all;
-  &:hover {
-    opacity: 1;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    bottom: 10px;
+    ${(props) => (!props.isActive 
+      ? 
+      'width: 0; left: 50%;'
+      :
+      'width: 100%; left: 0;' 
+      )}
+    z-index: 3;
+    background: #ae0000;
+    transition: all 0.2s ease;
+  }
+  &:hover::after {
+    width: 100%;
+    left: 0;
   }
 `;
 

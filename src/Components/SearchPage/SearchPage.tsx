@@ -65,7 +65,7 @@ const SearchPage: React.FunctionComponent<ISearchPageProps> = (props) => {
         container
         justifyContent="center"
         style={{
-          background: "#F6F7F9",
+          
         }}
       >
           <SearchBoxContainer>
@@ -191,9 +191,7 @@ export const SideBarRecommendation :React.FC<{filter : string | undefined}> = ({
 
 const SearchBoxContainer = styled.div`
   width: 50%;
-  max-width: 800px;
-  min-width: 500px;
-  padding: 50px 0px;
+  padding: 16px 0;
   @media (max-width: 480px) {
   min-width: 80vw;
 }

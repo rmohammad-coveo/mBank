@@ -145,8 +145,12 @@ const MainWrapper = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  box-shadow: 5px 5px 0 #cccccc;
+  transition: all 300ms ease;
   &:hover {
     border-color: #ae0000;
+    box-shadow: 0 0 0 #cccccc;
+    filter: brightness(0.9);
   }
 
   &:hover ${Title} {
