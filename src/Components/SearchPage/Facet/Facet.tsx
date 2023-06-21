@@ -159,9 +159,10 @@ const Facet: FunctionComponent<FacetProps> = (props) => {
 export default memo(Facet);
 
 const Wrapper = styled.div`
-  border: 1px #e5e8e8 solid;
-  border-radius: 16px;
-  padding: 24px 16px;
+  border: 2px #e5e8e8 solid;
+  max-width: 300px;
+  padding: 24px 0 24px 20px;
   margin-bottom: 20px;
   font-family: inherit;
+  box-shadow: 5px 5px 0 #cccccc;  
 `;

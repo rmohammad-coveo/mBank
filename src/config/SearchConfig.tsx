@@ -21,11 +21,11 @@ You can later set which facet to show in each Tab
 export const FacetConfig = [
   {
     field: "source",
-    title: "Source",
+    title: "źródło",
   },
   {
     field: "filetype",
-    title: "File Type",
+    title: "rodzaj dokumentu",
   },
   {
     field: "concepts",
