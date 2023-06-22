@@ -23,7 +23,8 @@ const Wrapper = styled.div`
 const Logo = styled.img`
   height: 40px;
   object-fit: contain;
-  margin-left: 30px;
+  margin-left: 250px;
+
 `;
 
 export default Footer;

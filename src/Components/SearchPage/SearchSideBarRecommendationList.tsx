@@ -78,22 +78,27 @@ export const RecommendationListRenderer: FunctionComponent<
         <>
           {state.recommendations.length > 0 && (
             <>
-              <Divider />
-              <Typography variant="h6" component="h6" sx = {{marginLeft : '20px'}}>
-              {props.title}
+              {/* <Divider /> */}
+              <Typography variant="h6" component="h6" 
+              sx={{ marginLeft: '20px', margin: "16px", textAlign: "center", position: "relative", 
+              "&::after": {
+                content: "''", position: "absolute", backgroundColor: "#ae0000", width: "50%", height: "3px", left: "25%", bottom: "-3px"
+              } }}>
+                {props.title}
               </Typography>
+              {/* <Divider /> */}
               <CardWrapper>
                 {state?.recommendations
                   ?.slice(0, props.NumberofResults)
                   .map((recommendation, index) => {
 
                     const temp: unknown = recommendation.raw[`${props.imageField}`];
-                    const imageURL : string = temp as string;
+                    const imageURL: string = temp as string;
 
                     return (
                       <div key={recommendation.title + recommendation.uniqueId}>
                         <RecommendtionCardSmall
-                          video={props.videoRecommendation? props.videoRecommendation : (recommendation.raw.sourcetype === "YouTube"? true : false)}
+                          video={props.videoRecommendation ? props.videoRecommendation : (recommendation.raw.sourcetype === "YouTube" ? true : false)}
                           title={recommendation.title}
                           description={recommendation.excerpt}
                           clickUri={recommendation.clickUri}
@@ -101,7 +106,7 @@ export const RecommendationListRenderer: FunctionComponent<
                           onContextMenu={() => logClick(recommendation)}
                           onMouseDown={() => logClick(recommendation)}
                           onMouseUp={() => logClick(recommendation)}
-                          image={imageURL? imageURL : SampleImage}
+                          image={imageURL ? imageURL : SampleImage}
                         />
                       </div>
                     );
@@ -118,7 +123,7 @@ export const RecommendationListRenderer: FunctionComponent<
             {skeletonArray.map((item, index) => {
               return (
                 <div key={item}>
-                  <SkeletonRecommendtionCardSmall/>
+                  <SkeletonRecommendtionCardSmall />
                 </div>
               );
             })}
@@ -134,8 +139,8 @@ interface SearSearchSideBarRecommendationListProps {
   NumberofResults?: number;
   title?: string;
   videoRecommendation?: boolean;
-  imageField? : string;
-  searchHub : string;
+  imageField?: string;
+  searchHub: string;
 }
 
 const SearchSideBarRecommendationList: FunctionComponent<
@@ -148,42 +153,42 @@ const SearchSideBarRecommendationList: FunctionComponent<
   imageField = '',
   searchHub
 }) => {
-  const recommendationEngine = buildRecommendationEngine({
-    configuration: {
-      organizationId: process.env.REACT_APP_ORGANIZATION_ID!,
-      accessToken: process.env.REACT_APP_API_KEY!,
-      searchHub: searchHub,
-      pipeline: pipeline,
-      platformUrl: process.env.REACT_APP_PLATFORM_URL,
-    },
-  });
+    const recommendationEngine = buildRecommendationEngine({
+      configuration: {
+        organizationId: process.env.REACT_APP_ORGANIZATION_ID!,
+        accessToken: process.env.REACT_APP_API_KEY!,
+        searchHub: searchHub,
+        pipeline: pipeline,
+        platformUrl: process.env.REACT_APP_PLATFORM_URL,
+      },
+    });
 
-  const { settingContextFromEngine } = useContext(CustomContextContext);
+    const { settingContextFromEngine } = useContext(CustomContextContext);
 
-  settingContextFromEngine(recommendationEngine);
+    settingContextFromEngine(recommendationEngine);
 
-  const recController = buildRecommendationList(recommendationEngine, {
-    options: { id: "Recommendation" },
-  });
+    const recController = buildRecommendationList(recommendationEngine, {
+      options: { id: "Recommendation" },
+    });
 
-  return (
-    <RecommendationListRenderer
-      controller={recController}
-      engine={recommendationEngine}
-      NumberofResults={NumberofResults}
-      videoRecommendation={videoRecommendation}
-      imageField={imageField}
-      title = {title}
-    />
-  );
-};
+    return (
+      <RecommendationListRenderer
+        controller={recController}
+        engine={recommendationEngine}
+        NumberofResults={NumberofResults}
+        videoRecommendation={videoRecommendation}
+        imageField={imageField}
+        title={title}
+      />
+    );
+  };
 
 export default SearchSideBarRecommendationList;
 
 const Divider = styled.div`
 /*   width: 100%; */
   height: 4px;
-  background: ${Theme.primaryText};
+  background: #ae0000;
   margin-top: 30px;
   margin-bottom: 20px;
   margin-left: 10px;

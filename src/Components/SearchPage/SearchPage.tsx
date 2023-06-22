@@ -73,7 +73,7 @@ const SearchPage: React.FunctionComponent<ISearchPageProps> = (props) => {
           </SearchBoxContainer>
       </Grid>
       <SearchTabs filterSelected={filter? filter : ""} />
-      <Container maxWidth="xl" style={{ padding: "0px" }}>
+      <Container maxWidth="xl" style={{ padding: "0px", backgroundColor: "#fafafa" }}>
         <Grid item mt={3} mb={2}>
           <RedirectionTrigger/>
           <NotifyTrigger/>

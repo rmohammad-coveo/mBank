@@ -73,7 +73,7 @@ const FacetRenderer: FunctionComponent<FacetRendererProps> = (props) => {
                     justifyContent: "space-between",
                   }}
                 >
-                  <Typography variant="h6" component="h6">
+                  <Typography variant="h6" component="h6" sx={{color: "black"}}>
                     {props.title}
                   </Typography>
                   <div
@@ -95,7 +95,7 @@ const FacetRenderer: FunctionComponent<FacetRendererProps> = (props) => {
 
                       return (
                         <ListItem
-                          style={{ padding: 0 }}
+                          style={{ padding: "0" }}
                           key={value.value}
                           role={undefined}
                           button
@@ -160,8 +160,11 @@ export default memo(Facet);
 
 const Wrapper = styled.div`
   border: 1px #e5e8e8 solid;
-  border-radius: 16px;
   padding: 24px 16px;
   margin-bottom: 20px;
   font-family: inherit;
+  background-color: white;
+  box-shadow: 4px 4px #cccccc;
+  width: 300px;
+  margin-left: 30px; 
 `;

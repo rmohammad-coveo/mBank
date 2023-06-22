@@ -13,3 +13,12 @@
   text-overflow: ellipsis;
   width: 100%;
 }
+
+.play-icon {
+  position: absolute;
+  font-size: 30px;
+  top: calc(50% - 50px);
+  left: calc(50% - 20px);
+  color: white;
+  filter: drop-shadow(0 0 4px black);
+}

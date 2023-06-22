@@ -241,7 +241,6 @@ const Title = styled.h2`
   width: 80%;
   margin-bottom: 10px;
 
-
   & a {
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -249,10 +248,12 @@ const Title = styled.h2`
     overflow: hidden;
     font-weight: 400;
     text-decoration: none;
-    color: ${Theme.resultLink};
+    color: black;
+    font-weight: bold;
   }
 
   & a:hover {
+    color: #ae0000;
     text-decoration: underline;
   }
   @media (max-width: 480px) {

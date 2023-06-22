@@ -2,7 +2,9 @@ import React from "react";
 import { Theme } from "../../theme";
 import styled from "styled-components";
 import Skeleton from "react-loading-skeleton";
+import Icon from "react-icons-kit";
 import "react-loading-skeleton/dist/skeleton.css";
+import {play} from 'react-icons-kit/fa/play'
 
 
 interface RecommendationCardSmallType {
@@ -42,6 +44,7 @@ const RecommendtionCardSmall : React.FC<RecommendationCardSmallType> = ({
     >
       {video ? (
         <VideoWrapper>
+            <Icon className="play-icon" icon={play} size={50}/>
             <Image src = {image}/>
             <Title>{title}</Title>
         </VideoWrapper>
@@ -77,7 +80,7 @@ const TextWrapper = styled.div`
 `;
 
 const Image = styled.img`
-width: 90%;
+width: 100%;
 object-fit : "center";
 margin-bottom: 10px;
 `
@@ -88,8 +91,9 @@ const VideoWrapper = styled.div`
   height: 250px;
   align-items: center;
   justify-content: space-around;
-  padding: 10px 20px;
   flex-direction: column;
+  position: relative;
+  filter: brightness(0.8);
 `;
 
 const Title = styled.a`
@@ -135,18 +139,22 @@ const ReferralLink = styled.a`
 
 const MainWrapper = styled.div`
   /* width: 100%; */
-  border-radius: 16px;
   border: 1px solid #e5e8e8;
   overflow: hidden;
-  margin: 10px 10px 10px 10px;
+  margin: 20px;
   background: white;
   cursor: pointer;
+  padding: 12px;
+  box-shadow: 4px 4px #cccccc;
+  transition: all 300ms ease;
   &:hover {
-    border-color: ${Theme.link};
+    border-color: #ae0000;
+    box-shadow: 0px 0px #cccccc;
+    filter: brightness(0.8);
   }
 
   &:hover ${Title} {
-    color: #1372ec;
+    color: #ae0000;
   }
 
   &:hover ${ReferralLink} {

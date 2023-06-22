@@ -136,7 +136,6 @@ import React, {
   
   const IconImage = styled.img`
     width: 100%;
-    border-radius: 8px;
   `;
   
   const TextWrapper = styled.div`
@@ -161,7 +160,8 @@ import React, {
       overflow: hidden;
       font-weight: 400;
       text-decoration: none;
-      color: ${Theme.resultLink};
+      color: black;
+      font-weight: bold;
     }
   
     & a:hover {
