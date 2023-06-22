@@ -83,7 +83,7 @@ const SearchTabs : React.FC<SearchTabsType> = ({ filterSelected }) => {
 };
 
 const Wrapper = styled.div`
-  width: 100%;
+  margin: auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
