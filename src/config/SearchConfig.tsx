@@ -51,7 +51,7 @@ export const FacetConfig = [
   },{
     title: "More Info",
     field : "mynav4b"
-  }
+  },
 ] as const;
 
 
@@ -71,7 +71,7 @@ export const ResultTemplateConfig = [
     <GeneralResultTemplate 
       result={result} 
       QuickViewOnClick = {true} 
-      FieldValues = {[{caption: 'source type', value : 'sysfiletype'},{caption: 'source', value : 'source'}]} 
+      FieldValues = {[{caption: 'rodzaj dokumentu', value : 'sysfiletype'},{caption: 'źródło', value : 'source'}]} 
     />,
     priority: 1,
   },
@@ -133,7 +133,8 @@ export const FieldToIncludesInSearchResults : string[] = [
   "ytthumbnailurl",
   "sfimage__c",
   "sfimage_url__c",
-  'adspecial'
+  'adspecial',
+  'custnavurl'
 ];
 
 
@@ -169,7 +170,7 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
         imageField: 'ytthumbnailurl',
       }
     ],
-    facetToInclude: ["source", "filetype", "concepts",],
+    facetToInclude: ["source", "filetype", "concepts"],
   },
   {
     caption: "Investing",

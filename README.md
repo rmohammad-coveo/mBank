@@ -6,6 +6,8 @@ The initial UI was created using [Coveo CLI - ui:create:react](https://docs.cove
 
 This project is built upon the [FiServ](https://github.com/mhsumbal-coveo/FiServ-Pre-req) project.
 
+Credits: [GitHub - textrank-polish](https://github.com/mkopec87/textrank-polish) - used to generate results for Query Suggestions in the Polish language.
+
 ## Prerequisite
 
 - Node v16 or greater

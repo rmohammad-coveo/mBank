@@ -10,7 +10,7 @@ const ContextForm = () => {
 
   return (
     <Wrapper>
-      <h4>Profile Selector</h4>
+      <h4>wybór profilu</h4>
       <ProfileSelector
         setProfiledSelected={setProfiledSelected}
         profileSelected={profileSelected}

@@ -49,10 +49,10 @@ const RecommendtionCard: React.FC<RecommendationCardType> = ({
         <Title>{title}</Title>
         <SubTitle>{description}</SubTitle>
         <ReferralLink>
-          {!video ? "Learn more" : "Watch now"}{" "}
-          <div style={{ marginLeft: "5px", color: Theme.link }}>
+          {!video ? "Dowiedz się więcej" : "Oglądaj teraz"}{" "}
+          <ChevronContainer>
             <Icon icon={chevronRight} style={{color: "#ae0000"}}/>
-          </div>
+          </ChevronContainer>
         </ReferralLink>
       </TextWrapper>
     </MainWrapper>
@@ -133,6 +133,12 @@ const ReferralLink = styled.a`
   cursor: pointer;
 `;
 
+const ChevronContainer = styled.div`
+  color: ${Theme.link};
+  margin-left: 10px;
+  transition: all 300ms ease;
+`;
+
 const MainWrapper = styled.div`
   height: 500px;
   z-index: 10;
@@ -165,9 +171,15 @@ const MainWrapper = styled.div`
     opacity: 1;
   }
 
+  &:hover ${ChevronContainer} {
+    transform: translatex(10px);
+  }
+
   @media (max-width: 480px) {
     width: 90vw;
   }
 `;
+
+
 
 export default RecommendtionCard;

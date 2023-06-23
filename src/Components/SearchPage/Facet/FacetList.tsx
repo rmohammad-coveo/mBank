@@ -2,9 +2,23 @@ import Box from "@mui/material/Box";
 import Facet from "./Facet";
 import { useParams } from "react-router-dom";
 import { FacetConfig, SearchPageTabConfig } from "../../../config/SearchConfig";
-import React from "react";
+import React, {useContext} from "react";
+import { AtomicCategoryFacet } from '@coveo/atomic-react'
+import { CategoryFacet } from "./CategoryFacet";
+import { CategoryFacetOptions, buildCategoryFacet } from "@coveo/atomic-react";
+import EngineContext from "../../../common/engineContext";
 
 const FacetList = () => {
+  
+  const options: CategoryFacetOptions = {
+    field: 'custurlnav', 
+    delimitingCharacter: "|",
+    facetId: "custurlnav",
+  };
+  const engine = useContext(EngineContext)!;
+  const controller = buildCategoryFacet(engine, {options});
+
+  
   const { filter } = useParams();
 
   return (
@@ -17,11 +31,12 @@ const FacetList = () => {
               if (
                 (item.facetToInclude &&
                   filter?.toLowerCase() ===
-                    item.caption.replace(/\s/g, "").toLowerCase()) ||
+                  item.caption.replace(/\s/g, "").toLowerCase()) ||
                 (index === 0 && filter === undefined && item.facetToInclude)
               ) {
                 return (
                   <React.Fragment key={item.caption}>
+                    <CategoryFacet controller={controller} />
                     {item.facetToInclude.map((item) => {
                       return (
                         <React.Fragment key={item}>

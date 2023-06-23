@@ -30,54 +30,54 @@ export default function App() {
     initializeHeadlessEngine().then((engine) => {
       settingContextFromEngineFirstTime(engine)
       setEngine(engine);
-    }); 
+    });
   }, []);
 
 
-    
+
 
   return (
     <>
       {engine ? (
         <EngineProvider value={engine}>
-          <AtomicSearchInterface engine = {engine} >
+          <AtomicSearchInterface engine={engine} >
             <style>
               {myStyles}
             </style>
-          <FacetControllerProvider>
-            <QuickViewModalProvider>
-              <CustomContextProvider>
-                <Router>
-                  <Header />
-                  <NavBar />
-                  <QuickViewModal />
-                  <Routes>
-                    <Route
-                      path="/"
-                      element={
-                        <Navigate
-                          to={isEnvValid() === true ? "/home" : "/error"}
-                          replace
-                        />
-                      }
-                    />
-                    <Route path="/home" element={<HomePage />} />
-                    <Route
-                      path="/search"
-                      element={<SearchPage engine={engine} />}
-                    />
-                    <Route
-                      path="/search/:filter"
-                      element={<SearchPage engine={engine} />}
-                    />
-                    {/* <Route path="/salesforcekb/:sfid" element={<SFKBArticle/>} /> */}
-                    <Route path="/error" element={<Error />} />
-                  </Routes>
-                  <Footer />
-                </Router>
-              </CustomContextProvider>
-            </QuickViewModalProvider>
-          </FacetControllerProvider>
+            <FacetControllerProvider>
+              <QuickViewModalProvider>
+                <CustomContextProvider>
+                  <Router>
+                    <Header />
+                    <NavBar />
+                    <QuickViewModal />
+                    <Routes>
+                      <Route
+                        path="/"
+                        element={
+                          <Navigate
+                            to={isEnvValid() === true ? "/home" : "/error"}
+                            replace
+                          />
+                        }
+                      />
+                      <Route path="/home" element={<HomePage />} />
+                      <Route
+                        path="/search"
+                        element={<SearchPage engine={engine} />}
+                      />
+                      <Route
+                        path="/search/:filter"
+                        element={<SearchPage engine={engine} />}
+                      />
+                      {/* <Route path="/salesforcekb/:sfid" element={<SFKBArticle/>} /> */}
+                      <Route path="/error" element={<Error />} />
+                    </Routes>
+                    <Footer />
+                  </Router>
+                </CustomContextProvider>
+              </QuickViewModalProvider>
+            </FacetControllerProvider>
           </AtomicSearchInterface>
         </EngineProvider>
       ) : (

@@ -10,6 +10,11 @@ import {
   buildFacet,
   FacetValue,
 } from "@coveo/headless";
+
+import {
+  AtomicSearchInterface
+} from '@coveo/atomic-react'
+
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import Box from "@mui/material/Box";
@@ -159,21 +164,10 @@ const Facet: FunctionComponent<FacetProps> = (props) => {
 export default memo(Facet);
 
 const Wrapper = styled.div`
-<<<<<<< HEAD
-  border: 1px #e5e8e8 solid;
-  padding: 24px 16px;
-  margin-bottom: 20px;
-  font-family: inherit;
-  background-color: white;
-  box-shadow: 4px 4px #cccccc;
-  width: 300px;
-  margin-left: 30px; 
-=======
   border: 2px #e5e8e8 solid;
   max-width: 300px;
   padding: 24px 0 24px 20px;
   margin-bottom: 20px;
   font-family: inherit;
   box-shadow: 5px 5px 0 #cccccc;  
->>>>>>> 34a074fe29245981c27d88729895831931dd42c4
 `;

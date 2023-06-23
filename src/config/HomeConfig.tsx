@@ -88,7 +88,7 @@ export const MainRecommendationConfig : RecommendationType= {
 
 export const VideoRecommendationConfig : RecommendationType  = {
 
-  title : 'wideo',
+  title : 'filmy',
   description : "Here are your personalized recommendations",
   numberOfResults: 3,
   imageField : 'ytthumbnailurl',
