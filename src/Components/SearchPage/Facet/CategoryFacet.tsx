@@ -168,8 +168,13 @@ const AncestorValue = styled.button`
   font-size: 16px;
   cursor: pointer;
   border: none;
-  background: #eeeeee;
+  background: none;
+  border: 1px solid #242424;
   padding: 4px;
   border-radius: 2px;
   margin-bottom: 2px;
+  transition: all 300ms ease;
+  &:hover {
+    background-color: #eeeeee
+  }
 `;
