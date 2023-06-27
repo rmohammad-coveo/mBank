@@ -16,7 +16,7 @@ const ContextForm = () => {
         profileSelected={profileSelected}
         ContextData={ContextData}
       />
-      <h4>Context</h4>
+      {/* <h4>Context</h4> */}
       <ContextDataTable
         profileSelected={profileSelected}
         setContextData={setContextData}

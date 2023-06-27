@@ -22,40 +22,28 @@ export const InitialData = [
     context: [],
   },
   {
-    name: "Oliver Hansen",
-    email : "ohansen@coveo.com",
-    profile: "https://static.toiimg.com/photo/68944342.cms",
+    name: "Robert Lewandowski",
+    email : "rlewandowski@coveo.com",
+    profile: "https://assets.laliga.com/squad/2023/t178/p56764/256x256/p56764_t178_2023_0_003_000.png",
     context: [
       {
         active: true,
-        keyName: "employment",
-        keyValue: "investment",
+        keyName: "interest",
+        keyValue: "konta",
         customQRF: false,
-      },
-      {
-        active: true,
-        keyName: "age",
-        keyValue: "60",
-        customQRF: false,
-      },
+      }
     ],
   },
   {
-    name: "Van Henery",
-    email : "vhenery@coveo.com",
+    name: "Ewalina Kamczyk",
+    email : "ekamczyk@coveo.com",
     profile:
-      "https://englishtribuneimages.blob.core.windows.net/gallary-content/2022/3/2022_3$largeimg_1116021257.JPG",
+      "https://yt3.googleusercontent.com/ytc/AGIKgqO5RLguKtaqkMAYOGrGqC8Ce0Vhslt5UAb-q32YZA=s900-c-k-c0x00ffffff-no-rj",
     context: [
       {
         active: true,
-        keyName: "age",
-        keyValue: "32",
-        customQRF: false,
-      },
-      {
-        active: true,
-        keyName: "employment",
-        keyValue: "insurance",
+        keyName: "interest",
+        keyValue: "kredyt",
         customQRF: false,
       },
     ],

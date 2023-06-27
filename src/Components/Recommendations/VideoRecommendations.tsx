@@ -49,43 +49,43 @@ export const RecommendationListRenderer: FunctionComponent<
     engine.dispatch(logRecommendationOpen(recommendation));
   };
 
-  const skeletonArray = [1,2,3]
+  const skeletonArray = [1, 2, 3]
   const NumberOfResult = VideoRecommendationConfig.numberOfResults
   return (
     <MainWrapper>
       <Title>{VideoRecommendationConfig.title}</Title>
       {state.recommendations.length > 0 ?
-      <CardWrapper>
-        {state?.recommendations?.slice(0, NumberOfResult).map((recommendation, index) => {
+        <CardWrapper>
+          {state?.recommendations?.slice(0, NumberOfResult).map((recommendation, index) => {
 
-        const temp: unknown = recommendation.raw[`${VideoRecommendationConfig.imageField}`];
-        const imgeURL : string = temp as string;
+            const temp: unknown = recommendation.raw[`${VideoRecommendationConfig.imageField}`];
+            const imgeURL: string = temp as string;
 
-          return (
-            <div key = {recommendation.title + recommendation.uniqueId}>
-            <RecommendtionCard
-              video={true}
-              title={recommendation.title}
-              description={recommendation.excerpt}
-              image={imgeURL? imgeURL: SampleImage}
-              clickUri={recommendation.clickUri} 
-              onClick={() => logClick(recommendation)}
-              onContextMenu={() => logClick(recommendation)}
-              onMouseDown={() => logClick(recommendation)}
-              onMouseUp={() => logClick(recommendation)}
-            />
-            </div>
-          );
-        })}
-      </CardWrapper> : <CardWrapper>
-        {skeletonArray.map((item, index) => {
-          return (
-            <div key = {item}>
-            <SkeletonRecommendtionCard/>
-            </div>
-          );
-        })}
-      </CardWrapper> }
+            return (
+              <div key={recommendation.title + recommendation.uniqueId}>
+                <RecommendtionCard
+                  video={true}
+                  title={recommendation.title}
+                  description={recommendation.excerpt}
+                  image={imgeURL ? imgeURL : SampleImage}
+                  clickUri={recommendation.clickUri}
+                  onClick={() => logClick(recommendation)}
+                  onContextMenu={() => logClick(recommendation)}
+                  onMouseDown={() => logClick(recommendation)}
+                  onMouseUp={() => logClick(recommendation)}
+                />
+              </div>
+            );
+          })}
+        </CardWrapper> : <CardWrapper>
+          {skeletonArray.map((item, index) => {
+            return (
+              <div key={item}>
+                <SkeletonRecommendtionCard />
+              </div>
+            );
+          })}
+        </CardWrapper>}
     </MainWrapper>
   );
 
@@ -96,14 +96,14 @@ const VideoRecommendation = () => {
     configuration: {
       organizationId: process.env.REACT_APP_ORGANIZATION_ID!,
       accessToken: process.env.REACT_APP_API_KEY!,
-      searchHub : VideoRecommendationConfig.searchHub,
-      pipeline : VideoRecommendationConfig.pipeline,
+      searchHub: VideoRecommendationConfig.searchHub,
+      pipeline: VideoRecommendationConfig.pipeline,
       platformUrl: process.env.REACT_APP_PLATFORM_URL,
     },
   });
 
 
-  const {settingContextFromEngine} = useContext(CustomContextContext)
+  const { settingContextFromEngine } = useContext(CustomContextContext)
 
   settingContextFromEngine(recommendationEngine)
 

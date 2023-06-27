@@ -4,7 +4,7 @@ import { RecommendationType } from './Types/ConfigTypes';
 export const NavBarConfig = [
   {
     title: "konta",
-    redirectTo: "/homehome",
+    redirectTo: "/home",
   },
   {
     title: "kredyty",
@@ -92,7 +92,7 @@ export const VideoRecommendationConfig : RecommendationType  = {
   description : "Here are your personalized recommendations",
   numberOfResults: 3,
   imageField : 'ytthumbnailurl',
-  pipeline : 'Video Rec Sidebar',
+  pipeline : 'Video Rec Content',
   searchHub: 'default',
   id : 'Recommendation'
 }

@@ -226,7 +226,6 @@ const NavigationLink = styled(Link)`
   const IconsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-right: 100px;
 `;
 
 const IconContainer = styled.button`

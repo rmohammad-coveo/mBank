@@ -155,17 +155,21 @@ You can leave the Array empty if you don't want any tabs
 
 */
 
+const sidebarTitle = "Related Videos";
+const sidebarVIdeoPipeline = "Video Rec Content";
+
 export const SearchPageTabConfig : SearchPageTabConfigType[] = [
+  //KLIENCI INDYWIDUALNI, PRIVATE BANKING, FIRMY, 
   {
-    caption: "All",
+    caption: "Wszystko",
     expression: "",
     isActive: true,
     sideBarRecommendationConfig: [
       {
-        pipeline: "Video Rec Sidebar",
+        pipeline: sidebarVIdeoPipeline,
         searchHub : 'default',
         NumberofResults: 3,
-        title: "Related Videos",
+        title: sidebarTitle,
         videoRecommendation: true,
         imageField: 'ytthumbnailurl',
       }
@@ -173,52 +177,68 @@ export const SearchPageTabConfig : SearchPageTabConfigType[] = [
     facetToInclude: ["source", "filetype", "concepts"],
   },
   {
-    caption: "Investing",
-    expression: `@source==("Investopedia","Investopedia Videos","Nerd Wallet") AND @concepts='investment'`,
+    caption: "Klienci Indywidualni",
+    expression: `Klienci Indywidualni`,
     isActive: false,
     sideBarRecommendationConfig: [
       {
-        pipeline: "Investing Sidebar",
+        pipeline: sidebarVIdeoPipeline,
         searchHub : 'default',
-        NumberofResults: 6,
-        title: "Related for Investing",
-        videoRecommendation: false,
-      },
+        NumberofResults: 3,
+        title: sidebarTitle,
+        videoRecommendation: true,
+        imageField: 'ytthumbnailurl',
+      }
     ],
     facetToInclude: ["concepts","mynav2b"],
   },
   {
-    caption: "Money Matters",
-    expression: `@source==("Nerd Wallet","Credit Cards","Bankrate","Insurance Advice")`,
+    caption: "Private Banking",
+    expression: `Private Banking`,
     isActive: false,
-    facetToInclude: ["concepts","mynav2b", "mynav4b"],
+    sideBarRecommendationConfig: [
+        {
+          pipeline: sidebarVIdeoPipeline,
+          searchHub : 'default',
+          NumberofResults: 3,
+          title: sidebarTitle,
+          videoRecommendation: true,
+          imageField: 'ytthumbnailurl',
+        }
+    ],
+    facetToInclude: ["concepts","mynav2b"],
   },
   {
-    caption: "Insurance Needs",
-    expression: `@source==("Insurance Information","Insurance Advice","Policy Genius","Nerd Wallet") AND @concepts='insurance'`,
+    caption: "Firmy",
+    expression: `Firmy`,
     isActive: false,
     sideBarRecommendationConfig: [
       {
-        pipeline: "Glossary test",
+        pipeline: sidebarVIdeoPipeline,
         searchHub : 'default',
-        NumberofResults: 6,
-        title: "Glossary",
-        videoRecommendation: false,
-      },
+        NumberofResults: 3,
+        title: sidebarTitle,
+        videoRecommendation: true,
+        imageField: 'ytthumbnailurl',
+      }
     ],
-    facetToInclude: ["concepts"],
+    facetToInclude: ["concepts","mynav2b"],
   },
   {
-    caption: "Banking Info",
-    expression: `@source==("Bankrate")`,
+    caption: "KNF",
+    expression: `@source==KNF`,
     isActive: false,
-    facetToInclude: ["concepts","mynav2b","mynav3b"],
-  },
-  {
-    caption: "Advisors",
-    expression: `@source==("Advisor")`,
-    isActive: false,
-    facetToInclude: ["adspecial","adminimums","adstate","adcity"],
+    sideBarRecommendationConfig: [
+      {
+        pipeline: sidebarVIdeoPipeline,
+        searchHub : 'default',
+        NumberofResults: 3,
+        title: sidebarTitle,
+        videoRecommendation: true,
+        imageField: 'ytthumbnailurl',
+      }
+    ],
+    facetToInclude: ["concepts","mynav2b"],
   },
   {
     caption: "Youtube",

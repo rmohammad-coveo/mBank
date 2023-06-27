@@ -7,6 +7,9 @@ import { Box, Divider, List, ListItem, ListItemText, Typography, Button } from '
 import { useEffect, useState, FunctionComponent } from 'react';
 import styled from "styled-components";
 import './Facet.css';
+import Icon from 'react-icons-kit';
+import { cornerDownRight } from 'react-icons-kit/feather'
+
 
 
 interface CategoryFacetProps {
@@ -25,40 +28,40 @@ export const CategoryFacet: FunctionComponent<CategoryFacetProps> = (props) => {
 
   function renderClearButton() {
     return (
-      <Button size='medium' onClick={() => controller.deselectAll()}>All categories</Button>
+      <Button size='medium' sx={{ margin: "4px 2px", color: "#ae0000" }} onClick={() => controller.deselectAll()}>All categories</Button>
     );
   }
 
   function renderParents() {
-    const indentConstant = 20;
+    //Adds indentations to each level (units in px)
+    const indentConstant = 30;
 
     return (
-       state.hasActiveValues && (
-      <Box pb={1}
-      sx={{
-        display: "flex",
-        flexDirection: "column",    
-      }}>
-        {renderClearButton()}
-        
-        {state.parents.map((parentValue, i) => {
-            const isSelectedValue = i === state.parents.length - 1;
+      state.hasActiveValues && (
+        <Box pb={1}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}>
+          {renderClearButton()}
 
-            return (    
+          {state.parents.map((parentValue, i) => {
+            const isSelectedValue = i === state.parents.length - 1;
+            return (
               <Box key={getUniqueKeyForValue(parentValue)}>
-                {!isSelectedValue ? (
-                  <AncestorValue style={{marginLeft: `${indentConstant * i}px`}} onClick={() => controller.toggleSelect(parentValue)}>
-                    {parentValue.value}
-                  </AncestorValue>
-                ) : (
-                  <ParentValue style={{marginLeft: `${indentConstant * i}px`}}>{parentValue.value}</ParentValue>
+                {!isSelectedValue ? (     
+                    <AncestorValue style={{ marginLeft: `${indentConstant * i}px` }} onClick={() => controller.toggleSelect(parentValue)}>
+                      <Icon icon={cornerDownRight} /> &nbsp;
+                      {parentValue.value}
+                    </AncestorValue>
+                    ) : (
+                    <ParentValue style={{ marginLeft: `${indentConstant * i}px`, fontWeight: "bold" }}>{parentValue.value}</ParentValue>
                 )}
               </Box>
             );
           })}
-
-      </Box>
-    )
+        </Box>
+      )
     );
   }
 
@@ -68,15 +71,13 @@ export const CategoryFacet: FunctionComponent<CategoryFacetProps> = (props) => {
       <List dense >
         {
           state.values.map((value) => {
-            const labelId = `checkbox-list-label-${value}`;
-
             return (
               <ListItem
                 style={{ padding: "0" }}
                 key={getUniqueKeyForValue(value)}
                 role={undefined}
                 onClick={() => controller.toggleSelect(value)}
-                sx={{transition: "all 100ms ease", "&:hover": { cursor: "pointer", backgroundColor: "#eeeeee" }}}>
+                sx={{ transition: "all 100ms ease", "&:hover": { cursor: "pointer", backgroundColor: "#eeeeee" } }}>
                 <ListItemText
                   className="truncate inline"
                   primary={`${value.value}`}
@@ -92,12 +93,12 @@ export const CategoryFacet: FunctionComponent<CategoryFacetProps> = (props) => {
 
   function renderCanShowMoreLess() {
     return (
-      <div style={{display: "flex", justifyContent:"space-between", width: "100%"}}>
+      <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
         {state.canShowLessValues && (
-          <Button size='small' onClick={() => controller.showLessValues()}>Show less</Button>
+          <Button size='small' sx={{ color: "#ae0000" }} onClick={() => controller.showLessValues()}>Show less</Button>
         )}
         {state.canShowMoreValues && (
-          <Button size='small' onClick={() => controller.showMoreValues()}>Show more</Button>
+          <Button size='small' sx={{ color: "#ae0000" }} onClick={() => controller.showMoreValues()}>Show more</Button>
         )}
       </div>
     );
@@ -117,7 +118,7 @@ export const CategoryFacet: FunctionComponent<CategoryFacetProps> = (props) => {
         >
           <Typography variant="h6" component="h6" sx={{ color: "black" }}>
             Categories
-          </Typography> 
+          </Typography>
         </Box>
         <Divider />
       </>
@@ -140,23 +141,13 @@ export const CategoryFacet: FunctionComponent<CategoryFacetProps> = (props) => {
   );
 };
 
-// usage
-
-/**
- * ```tsx
- * const options: CategoryFacetOptions = {field: 'geographicalhierarchy'};
- * const controller = buildCategoryFacet(engine, {options});
- *
- * <CategoryFacet controller={controller} />
-*/
-
 const Wrapper = styled.div`
   border: 2px #e5e8e8 solid;
   max-width: 300px;
   padding: 24px 0 24px 20px;
   margin-bottom: 20px;
   font-family: inherit;
-  box-shadow: 5px 5px 0 #cccccc;  
+  box-shadow: 5px 5px 0 #cccccc;
 `;
 
 const ParentValue = styled.p`
@@ -169,7 +160,6 @@ const AncestorValue = styled.button`
   cursor: pointer;
   border: none;
   background: none;
-  border: 1px solid #242424;
   padding: 4px;
   border-radius: 2px;
   margin-bottom: 2px;

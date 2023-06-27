@@ -185,10 +185,6 @@ export const SideBarRecommendation :React.FC<{filter : string | undefined}> = ({
   </>
 }
 
-
-
-
-
 const SearchBoxContainer = styled.div`
   width: 50%;
   padding: 16px 0;

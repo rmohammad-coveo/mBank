@@ -28,6 +28,7 @@ height: 80px;
 align-items: center;
 width: 100%;
 display: flex;
+justify-content: center;
 margin: 0 auto;
 max-width: 1500px;
 background-color: white;
@@ -36,10 +37,8 @@ background-color: white;
 const NavigationWrapper = styled.ul`
 display: flex;
 color: #121212;
-width: 100%;
 min-width: 400px;
 height: 40px;
-/* justify-content: space-between; */
 align-items: center;
 @media (max-width: 480px) {
     margin-left: 0px;
@@ -53,7 +52,7 @@ const NavigationLink = styled.a`
 max-width: 300px;
 text-overflow: "";
 color: #121212;
-margin-right: 40px;
+margin: 0 20px;
 font-size: 18px;
 text-decoration: none;
 opacity: 0.8;
