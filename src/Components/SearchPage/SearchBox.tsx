@@ -48,8 +48,8 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
       freeSolo
       style={{width: '100%', background: 'white'}}
       renderInput={(params) => (
-        <TextField {...params} size="small" className='search-box'
-        sx={{"& fieldset": {border:"none"}, marginTop: "4px"}}/>
+        <TextField {...params} size="medium" className='search-box'
+        sx={{"&:fieldset": {border:"none"}, marginTop: "16px"}}/>
       )}
       renderOption={(props, option, { inputValue }) => {
         const matches = match(option, inputValue);
@@ -98,6 +98,7 @@ const Container = styled.div`
   border: 1px solid #aaaaaa;
   border-bottom: 3px solid #2f46de;
   border-radius: 2px;
+  align-items: center;
 `
 
 const SearchButton = styled(Button)`

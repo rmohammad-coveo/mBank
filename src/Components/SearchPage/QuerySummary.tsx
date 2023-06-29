@@ -20,7 +20,7 @@ const QuerySummaryRenderer: FunctionComponent<QuerySummaryProps> = (props) => {
   );
 
   const renderNoResults = () => {
-    return <Box mt={5}>No results</Box>;
+    return <Box mt={5}>brak wyników</Box>;
   };
 
   const renderBold = (input: string) => {
