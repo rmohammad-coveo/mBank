@@ -155,7 +155,7 @@ You can leave the Array empty if you don't want any tabs
 
 */
 
-const sidebarTitle = "Related Videos";
+const sidebarTitle = "podoble filmy";
 const sidebarVIdeoPipeline = "Video Rec Content";
 
 export const SearchPageTabConfig : SearchPageTabConfigType[] = [

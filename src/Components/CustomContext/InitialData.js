@@ -17,7 +17,7 @@ export const KEY_NAME_CONTEXT_DATA = 'context_data_v2'
 
 export const InitialData = [
   {
-    name: "Anonymous",
+    name: "anonimowy",
     profile: "https://icon-library.com/images/anonymous-user-icon/anonymous-user-icon-2.jpg",
     context: [],
   },

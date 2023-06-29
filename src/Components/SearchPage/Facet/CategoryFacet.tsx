@@ -117,7 +117,7 @@ export const CategoryFacet: FunctionComponent<CategoryFacetProps> = (props) => {
           }}
         >
           <Typography variant="h6" component="h6" sx={{ color: "black" }}>
-            Categories
+          kategorie
           </Typography>
         </Box>
         <Divider />

@@ -3,8 +3,10 @@ import { Theme } from "../../theme";
 import styled from "styled-components";
 import { chevronRight } from "react-icons-kit/feather/chevronRight";
 import { Icon } from "react-icons-kit";
+import { globe } from 'react-icons-kit/feather/globe'
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import singleLogo from '../../assets//sinlge-logo.gif'
 
 interface RecommendationCardType {
   title: string;
@@ -39,22 +41,43 @@ const RecommendtionCard: React.FC<RecommendationCardType> = ({
         window.open(clickUri, "_blank", "noopener,noreferrer");
       }}
       onContextMenu={onContextMenu}
-      /* onMouseDown = {onMouseDown}
-        onMouseUp = {onMouseUp} */
+    /* onMouseDown = {onMouseDown}
+      onMouseUp = {onMouseUp} */
     >
-      <ImageContainer>
-        <Image src={image} />
-      </ImageContainer>
-      <TextWrapper>
-        <Title>{title}</Title>
-        <SubTitle>{description}</SubTitle>
-        <ReferralLink>
-          {!video ? "Dowiedz się więcej" : "Oglądaj teraz"}{" "}
-          <ChevronContainer>
-            <Icon icon={chevronRight} style={{color: "#ae0000"}}/>
-          </ChevronContainer>
-        </ReferralLink>
-      </TextWrapper>
+
+      {!video
+        ?
+        <>
+          <ImageContainer>
+            <Title style={{marginRight: "32px"}} >{title}</Title>
+            <Image src={singleLogo} />
+          </ImageContainer>
+          <TextWrapper>
+            <SubTitle>{description}</SubTitle>
+            <ReferralLink style={{marginBottom: "64px"}}>
+              Dowiedz się więcej
+              <ChevronContainer>
+                <Icon icon={chevronRight} style={{ color: "#ae0000" }} />
+              </ChevronContainer>
+            </ReferralLink>
+          </TextWrapper>
+        </>
+        :
+        <>
+          <ImageContainer style={{marginBottom: "12px"}}>
+            <YTImage src={image} />
+          </ImageContainer>
+          <TextWrapper>
+            <Title style={{marginBottom: "16px"}}>{title}</Title>
+            <SubTitle>{description}</SubTitle>
+            <ReferralLink>
+              Oglądaj teraz
+              <ChevronContainer>
+                <Icon icon={chevronRight} style={{ color: "#ae0000" }} />
+              </ChevronContainer>
+            </ReferralLink>
+          </TextWrapper>
+        </>}
     </MainWrapper>
   );
 };
@@ -74,22 +97,32 @@ export const SkeletonRecommendtionCard: React.FC = () => {
 };
 
 const ImageContainer = styled.div`
-  width: 100%
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin: 32px 16px 16px;
 `;
 
 const Image = styled.img`
-  height: 250px;
-  width: 100%;
+  height: 40px;
+  width: 40px
+  object-fit: cover;
+  transition: 0.2s ease-in-out all;
+`;
+
+const YTImage = styled.img`
+  width: 90%;
+  margin: 0 auto;
   object-fit: cover;
   transition: 0.2s ease-in-out all;
 `;
 const TextWrapper = styled.div`
   display: flex;
-  height: 230px;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
   padding: 8px 16px;
+  margin: 0 16px 16px;
 `;
 
 const Title = styled.a`
@@ -98,7 +131,7 @@ const Title = styled.a`
   font-style: normal;
   align-self: flex-start;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
   color: ${Theme.primaryText};
   display: -webkit-box;
@@ -118,6 +151,7 @@ const SubTitle = styled.span`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  margin-bottom: 20px;
 `;
 
 const ReferralLink = styled.a`
@@ -140,11 +174,10 @@ const ChevronContainer = styled.div`
 `;
 
 const MainWrapper = styled.div`
-  height: 500px;
   z-index: 10;
   position: relative;
-  width: 300px;
-  border: 1px solid #e5e8e8;
+  width: 350px;
+  border: 3px solid #e5e8e8;
   overflow: hidden;
   margin: 20px;
   background: white;
@@ -161,10 +194,6 @@ const MainWrapper = styled.div`
 
   &:hover ${Title} {
     color: #ae0000;
-  }
-
-  &:hover ${Image} {
-    transform: scale(1.03);
   }
 
   &:hover ${ReferralLink} {

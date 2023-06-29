@@ -126,7 +126,7 @@ export default MainRecommendationList;
 
 const MainWrapper = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin-top: 40px;
   background-color: #f0f0f0;
   padding: 40px 20px;
