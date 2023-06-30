@@ -95,10 +95,10 @@ export const CategoryFacet: FunctionComponent<CategoryFacetProps> = (props) => {
     return (
       <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
         {state.canShowLessValues && (
-          <Button size='small' sx={{ color: "#ae0000" }} onClick={() => controller.showLessValues()}>Show less</Button>
+          <Button size='small' sx={{ color: "#ae0000" }} onClick={() => controller.showLessValues()}>pokaż mniej</Button>
         )}
         {state.canShowMoreValues && (
-          <Button size='small' sx={{ color: "#ae0000" }} onClick={() => controller.showMoreValues()}>Show more</Button>
+          <Button size='small' sx={{ color: "#ae0000" }} onClick={() => controller.showMoreValues()}>pokaż więcej</Button>
         )}
       </div>
     );

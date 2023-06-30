@@ -48,8 +48,8 @@ const SearchBoxRenderer: FunctionComponent<SearchBoxProps> = (props) => {
       freeSolo
       style={{width: '100%', background: 'white'}}
       renderInput={(params) => (
-        <TextField {...params} size="medium" className='search-box'
-        sx={{"&:fieldset": {border:"none"}, marginTop: "16px"}}/>
+        <TextField {...params} className='search-box' placeholder="Czego szukasz?" size="medium"
+        sx={{"& fieldset": {border:"none"}, width: "600px"}}/>
       )}
       renderOption={(props, option, { inputValue }) => {
         const matches = match(option, inputValue);

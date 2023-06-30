@@ -125,12 +125,12 @@ const FacetRenderer: FunctionComponent<FacetRendererProps> = (props) => {
                   </List>
                   {state.canShowLessValues && (
                     <Button size="small" onClick={() => showLess()}>
-                      Show Less
+                      pokaż mniej
                     </Button>
                   )}
                   {state.canShowMoreValues && (
                     <Button size="small" onClick={() => showMore()}>
-                      Show More
+                      pokaż więcej
                     </Button>
                   )}
                 </Collapse>

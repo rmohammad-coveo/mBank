@@ -20,7 +20,7 @@ const DidYouMeanRenderer: FunctionComponent<DidYouMeanProps> = (props) => {
     return (
       <div>
         <p>
-        brak wyników for{' '}
+          brak wyników for{' '}
           <b>{state.queryCorrection.wordCorrections[0].originalWord}</b>
         </p>
         <p>
